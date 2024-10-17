@@ -17,6 +17,7 @@ public class Bouncing_Boo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0, Bounce_height * (float)Math.Cos(Time.time/ Bounce_duration) + height_from_ground, 0);
+        // fix this use of time.time
+        transform.position = new Vector3(transform.position.x, Bounce_height * (float)Math.Cos(Time.time/ Bounce_duration) + height_from_ground, transform.position.y);
     }
 }
