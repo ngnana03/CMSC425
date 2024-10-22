@@ -522,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4566607907904438841, guid: 01d01e8edd95e554aa7018b2ce87b913, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4566607907904438841, guid: 01d01e8edd95e554aa7018b2ce87b913, type: 3}
       propertyPath: m_LocalRotation.x
@@ -530,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4566607907904438841, guid: 01d01e8edd95e554aa7018b2ce87b913, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4566607907904438841, guid: 01d01e8edd95e554aa7018b2ce87b913, type: 3}
       propertyPath: m_LocalRotation.z
@@ -542,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4566607907904438841, guid: 01d01e8edd95e554aa7018b2ce87b913, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4566607907904438841, guid: 01d01e8edd95e554aa7018b2ce87b913, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1825,7 +1825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e198be58c54ec6459e5bba11547bd51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetLocation: {fileID: 1358885225}
+  TargetLocation: {fileID: 2070359769}
 --- !u!65 &1423815043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1995,7 +1995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e198be58c54ec6459e5bba11547bd51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetLocation: {fileID: 2012490130}
+  TargetLocation: {fileID: 1423815041}
 --- !u!65 &1452519164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2739,7 +2739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e198be58c54ec6459e5bba11547bd51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetLocation: {fileID: 923302237}
+  TargetLocation: {fileID: 1452519162}
 --- !u!65 &2070359771
 BoxCollider:
   m_ObjectHideFlags: 0

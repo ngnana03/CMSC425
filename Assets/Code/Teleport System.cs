@@ -14,6 +14,7 @@ public class TeleportSystem : MonoBehaviour, Interactionterminal
         Debug.Log(other.transform.position);
         Debug.Log(TargetLocation.position);
         other.transform.position = TargetLocation.position;
+        other.transform.eulerAngles = new Vector3(0,180,0);
 
         return true;
     }

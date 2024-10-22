@@ -6,6 +6,7 @@ public class PlayerSystem : MonoBehaviour
 {
     bool ItemDetect = false;
     private readonly Collider[] _colliders = new Collider[3];
+    Collider col;
 
     // Update is called once per frame
     void Update()
@@ -13,7 +14,8 @@ public class PlayerSystem : MonoBehaviour
         Debug.Log(ItemDetect);
         if (ItemDetect && Input.GetKeyDown(KeyCode.F))
         {
-
+            var interactionterminal = col.GetComponent<Interactionterminal>();
+            interactionterminal.Interactwithitem(this);
         }
     }
 
@@ -22,9 +24,9 @@ public class PlayerSystem : MonoBehaviour
     {
 
         ItemDetect = true;
-        var interactionterminal = other.GetComponent<Interactionterminal>();
-            
-        interactionterminal.Interactwithitem(this);
+        
+        col = other;
+        
         
     }
 
