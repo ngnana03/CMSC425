@@ -18,6 +18,6 @@ public class Bouncing_Boo : MonoBehaviour
     void Update()
     {
         // fix this use of time.time
-        transform.position = new Vector3(transform.position.x, Bounce_height * (float)Math.Cos(Time.time/ Bounce_duration) + height_from_ground, transform.position.y);
+        transform.position = new Vector3(transform.position.x, Bounce_height * (float)Math.Cos(Time.time/ Bounce_duration) + height_from_ground, transform.position.z);
     }
 }
