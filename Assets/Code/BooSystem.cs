@@ -6,6 +6,8 @@ public class BooSystem : MonoBehaviour
 {
     bool playerDetect = false;
 
+
+    // MAKE BOO IMPLEMENT INTERACTION TERMINAL 
     // Update is called once per frame
     void Update()
     {
