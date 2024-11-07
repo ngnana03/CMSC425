@@ -1420,7 +1420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1218405169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3107,6 +3107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6f9f58b15a9984db8f1364ca5cf137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sleep: 0
+  imagetransparancy: {fileID: 1218405170}
+  textsleepscreen: {fileID: 1218405168}
 --- !u!1 &2070359768 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f76a4f64804a4b45a90fdc1f0262404, type: 3}

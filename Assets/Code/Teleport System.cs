@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class TeleportSystem : MonoBehaviour, Interactionterminal
 {
@@ -9,6 +10,8 @@ public class TeleportSystem : MonoBehaviour, Interactionterminal
     public string sleeptext;
     public TextMeshProUGUI imagesleep;
     public GameObject textsleepscreen;
+
+    
 
     public bool Interactwithitem(PlayerSystem other)
     {
@@ -20,6 +23,8 @@ public class TeleportSystem : MonoBehaviour, Interactionterminal
         s2.canMove = false;
         imagesleep.text = sleeptext;
         textsleepscreen.SetActive(true);
+        other.sleep = true;
+
         StartCoroutine(SpawnDelay(other));
         
         return true;
@@ -32,7 +37,9 @@ public class TeleportSystem : MonoBehaviour, Interactionterminal
         other.transform.position = TargetLocation.position;
         PlayerMovement s2 = other.GetComponent<PlayerMovement>();
         s2.canMove = true;
-        textsleepscreen.SetActive(false);
+        
+        other.sleep = false;
+        imagesleep.text = null;
     }
 
 }
