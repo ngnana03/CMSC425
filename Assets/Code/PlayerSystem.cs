@@ -11,6 +11,10 @@ public class PlayerSystem : MonoBehaviour
     public  bool sleep = false;
     public Image imagetransparancy;
     public GameObject textsleepscreen;
+
+    public bool item_1 = false;
+    public bool item_2 = false;
+    public bool item_3 = false;
     // Update is called once per frame
     void Update()
     {
