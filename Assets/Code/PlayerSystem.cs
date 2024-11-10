@@ -44,7 +44,7 @@ public class PlayerSystem : MonoBehaviour
         if (transparancy <= 0)
         {
             transparancy = 0;
-            textsleepscreen.SetActive(false);
+            //textsleepscreen.SetActive(false);
         }
 
         imagetransparancy.GetComponent<Image>().color = new Color32(0, 0, 0, (byte) ((int)(transparancy % 256)));

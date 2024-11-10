@@ -27,19 +27,47 @@ public class TeleportSystem : MonoBehaviour, Interactionterminal
             PlayerMovement s2 = other.GetComponent<PlayerMovement>();
             other.transform.GetChild(0).gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
             s2.canMove = false;
-            
+            if (other.item_1 == true)
+            {
+                imagesleep.text = sleeptext_item_1;
+            }
+            if (other.item_2 == true)
+            {
+                imagesleep.text = sleeptext_item_2;
+            }
+            if (other.item_3 == true)
+            {
+                imagesleep.text = sleeptext_item_3;
+            }
             textsleepscreen.SetActive(true);
             other.sleep = true;
 
             StartCoroutine(SpawnDelay(other));
+            
+        }
+        else
+        {
+            
+            textsleepscreen.SetActive(true);
+            imagesleep.text = "select an item";
+            falseitemdelay(other);
+            Debug.Log(imagesleep.text);
+            //textsleepscreen.SetActive(false);
+
         }
         return true;
     }
+
+    private IEnumerator falseitemdelay(PlayerSystem other)
+    {
+        yield return new WaitForSeconds(3);
+        textsleepscreen.SetActive(false);
+    }
+
     private IEnumerator SpawnDelay(PlayerSystem other)
     {
         yield return new WaitForSeconds(3);
         playerteleport(other);
-        //other.transform.position = world_item_1.position;
         PlayerMovement s2 = other.GetComponent<PlayerMovement>();
         s2.canMove = true;
         
@@ -52,18 +80,15 @@ public class TeleportSystem : MonoBehaviour, Interactionterminal
             if (other.item_1 == true)
             {
                 other.transform.position = world_item_1.transform.position;
-                imagesleep.text = sleeptext_item_1;
 
             }
             if (other.item_2 == true)
             {
                 other.transform.position = world_item_2.transform.position;
-                imagesleep.text = sleeptext_item_2;
             }
             if (other.item_3 == true)
             {
                 other.transform.position = world_item_3.transform.position;
-                imagesleep.text = sleeptext_item_3;
             }
             return true;
         }
