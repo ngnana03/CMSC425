@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private float rotationX = 0;
     private CharacterController characterController;
 
+    static public bool dialogue = false;
+
     public bool canMove = true;
 
     void Start()
@@ -31,6 +33,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+      /*  if (dialogue)               // Makes it so that if dialogue is happening, player cannot move
+        {
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Vector3 right = transform.TransformDirection(Vector3.right);
+            float curSpeedX = 0;
+            float curSpeedY = 0;
+            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+        } */
+
         if (!(PauseMenu.isPaused))
         {
             Vector3 forward = transform.TransformDirection(Vector3.forward);
