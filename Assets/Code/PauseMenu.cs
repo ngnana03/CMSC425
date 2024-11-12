@@ -26,25 +26,24 @@ public class PauseMenu : MonoBehaviour
                 PauseGame();
             }
         }
+        if (Input.GetKeyDown(KeyCode.Space) && isPaused)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void PauseGame()
     {
-        pausemenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        pausemenu.SetActive(true);
     }
 
     public void ResumeGame()
     {
-        pausemenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        pausemenu.SetActive(false);
     }
 
-    public void GoToMainMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Title");
-    }
 }
