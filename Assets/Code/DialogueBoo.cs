@@ -5,14 +5,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class TalkBoo : MonoBehaviour, Interactionterminal
+public class DialogueBoo : MonoBehaviour, Interactionterminal
 {
     public TextMeshProUGUI textcomponent;
     public string[] lines;
     public float textSpeed;
     public GameObject box;
     private int index;
-    
+
 
     public bool Interactwithitem(PlayerSystem other)
     {
@@ -76,3 +76,4 @@ public class TalkBoo : MonoBehaviour, Interactionterminal
         }
     }
 }
+
