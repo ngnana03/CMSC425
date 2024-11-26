@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerMovementCubeScene : MonoBehaviour
 {
     public Vector3 startingPosition; // The original position to reset the player to
     public float resetHeight = -10f; // The y-coordinate below which the player will be reset
+    private Rigidbody rb;
     public Material emptyMaterial;
     public Material fillMaterial;
 
@@ -14,7 +16,7 @@ public class PlayerMovementCubeScene : MonoBehaviour
     public float runSpeed = 12f;
     public float jumpPower = 7f;
     public float gravity = 10f;
-    public float slopeGravity = 1f; // Force to slide down slopes
+    public float slopeGravity = 15f; // Force to slide down slopes
     public float maxSlopeAngle = 45f; // Maximum angle to stand on without sliding
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
@@ -22,7 +24,6 @@ public class PlayerMovementCubeScene : MonoBehaviour
     public float crouchHeight = 1f;
     public float crouchSpeed = 3f;
 
-    private int doubleJumpCount;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
     private CharacterController characterController;
@@ -33,6 +34,7 @@ public class PlayerMovementCubeScene : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         startingPosition = transform.position;
 
         characterController = GetComponent<CharacterController>();
@@ -64,31 +66,41 @@ public class PlayerMovementCubeScene : MonoBehaviour
 
             if (characterController.isGrounded)
             {
-                Debug.Log("is Grounded:");
+                //Debug.Log("is Grounded:");
                 // Apply sliding force if on a steep slope
-                doubleJumpCount = 0;
-                if (OnSteepSlope(out Vector3 slopeDirection))
+                bool ret = OnSteepSlope(out Vector3 slopeDirection);
+                //Debug.Log("ret:");
+                //Debug.Log(ret);
+                if (ret)
                 {
-                    moveDirection = slopeDirection * slopeGravity;
-                    Debug.Log("moveDirec:");
-                    Debug.Log(moveDirection);
+                    Debug.Log("slope direction:");
+                    Debug.Log(slopeDirection);
+                    Debug.Log("slope gravity:");
+                    Debug.Log(slopeGravity);
+                    moveDirection += slopeDirection * slopeGravity * Time.deltaTime;
                 }
-
-                
             }
             else
             {
-                if (!characterController.isGrounded && Input.GetKeyDown(KeyCode.Return))
-                {
-                    doubleJumpCount++;
-                    if (doubleJumpCount <= 1)
-                    {
-                        moveDirection.y = 0f;
-                    }
-                }
                 Debug.Log("not Grounded:");
                 moveDirection.y -= gravity * Time.deltaTime;
             }
+
+            //SetSlopeSlideVelocity();
+            //if(slopeSlideVelocity == Vector3.zero)
+            //{
+            //    isSliding =  false;
+            //}
+            //else
+            //{
+            //    isSliding = true;
+            //}
+
+            //if (isSliding)
+            //{
+            //    Vector3 velocity = slopeSlideVelocity;
+            //    characterController.Move(velocity * Time.deltaTime);
+            //}
 
             characterController.Move(moveDirection * Time.deltaTime);
 
@@ -110,61 +122,55 @@ public class PlayerMovementCubeScene : MonoBehaviour
         }        
     }
 
+    //private void SetSlopeSlideVelocity()
+    //{
+    //    //slopeDirection = Vector3.zero;
+
+    //    // Raycast down to detect the surface
+    //    if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out RaycastHit hitInfo, 5))
+    //    {
+            
+    //        float slopeAngle = Vector3.Angle(hitInfo.normal, Vector3.up);
+
+    //        // Check if the slope is too steep
+    //        if (slopeAngle > characterController.slopeLimit)
+    //        {
+    //            slopeSlideVelocity = Vector3.ProjectOnPlane(Vector3.down, hitInfo.normal);
+    //            return;
+    //        }
+    //    }
+
+    //    if (isSliding)
+    //    {
+    //        slopeSlideVelocity -= slopeSlideVelocity * Time.deltaTime * 3;
+    //        if(slopeSlideVelocity.magnitude > 1)
+    //        {
+    //            return;
+    //        }
+    //    }
+    //    slopeSlideVelocity = Vector3.zero;
+    //}
+
     private bool OnSteepSlope(out Vector3 slopeDirection)
     {
         slopeDirection = Vector3.zero;
 
-        // Set a suitable distance for the raycast
-        float rayDistance = characterController.height / 2 + 1f;
-
-        // Offset the raycast origin slightly upwards to ensure accurate detection
-        Vector3 rayOrigin = transform.position + Vector3.up * (characterController.height / 2);
-
-        // Cast a ray downward from the player position to detect the slope
-        if (Physics.SphereCast(transform.position, 0.5f, Vector3.down, out RaycastHit hit, 5f))
+        // Raycast down to detect the surface
+        if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out RaycastHit hitInfo, 5))
         {
-            // Calculate the slope angle
-            float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
+            Debug.Log("slope angle");
+            float slopeAngle = Vector3.Angle(Vector3.up, hitInfo.normal);
+            Debug.Log(slopeAngle);
+            // Check if the slope is too steep
 
-            
-            // Check if the slope angle is greater than the maximum allowed angle
             if (slopeAngle > characterController.slopeLimit)
             {
-                // Calculate the sliding direction along the slope
-                slopeDirection = Vector3.ProjectOnPlane(Vector3.down, hit.normal).normalized;
+                slopeDirection = Vector3.ProjectOnPlane(Vector3.down, hitInfo.normal);
                 return true;
             }
         }
-        return false; // Not on a steep slope
+        return false;
     }
-
-    //private void OnSteepSlope()
-    //{
-    //    //Vector3 slopeDirection = Vector3.zero;
-    //    Vector3 velocity = Vector3.zero;
-
-    //    // Cast a ray downward from the player position to detect the slope
-    //    if (Physics.SphereCast(transform.position, 0.5f, Vector3.down, out RaycastHit hit, 5f))
-    //    {
-    //        // Calculate the slope angle
-    //        //float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
-
-    //        // Check if the slope angle is greater than the maximum allowed angle
-    //        //if (slopeAngle > characterController.slopeLimit)
-    //        //{
-    //            // Calculate the sliding direction along the slope
-    //            Vector3 slopeDirection = Vector3.ProjectOnPlane(Vector3.down, hit.normal);
-    //            velocity += slopeDirection * Vector3.Dot(Vector3.down, slopeDirection) * gravity * slopeGravity * Time.deltaTime;
-                
-    //        //}
-    //    }
-    //    velocity += moveDirection;
-    //    velocity *= 0.95f;   // basic friction
-
-
-    //    characterController.Move(velocity * Time.deltaTime);
-    //}
-
 
     private void ResetPlayer()
     {
@@ -172,7 +178,11 @@ public class PlayerMovementCubeScene : MonoBehaviour
         transform.position = startingPosition;
 
         // Reset other properties (like velocity) if needed
-        moveDirection = Vector3.zero;
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
     }
 
     private void ResetCubes()
