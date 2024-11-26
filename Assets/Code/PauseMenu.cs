@@ -6,16 +6,20 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pausemenu;
+    public GameObject deathScreen;
     public static bool isPaused;
+    public static bool died;
 
     void Start()
     {
         pausemenu.SetActive(false);
+        deathScreen.SetActive(false);
+        died = false;
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !died)
         {
             if(isPaused)
             {
@@ -29,6 +33,15 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isPaused)
         {
             SceneManager.LoadScene(0);
+        }
+        if (died && Input.GetKeyDown(KeyCode.Space))
+        {
+            died = false;
+            SceneManager.LoadScene(0);
+        }
+        if (died)
+        {
+            Died();
         }
     }
 
@@ -46,4 +59,9 @@ public class PauseMenu : MonoBehaviour
         pausemenu.SetActive(false);
     }
 
+    public void Died()
+    {
+        Time.timeScale = 0f;
+        deathScreen.SetActive(true);
+    }
 }
