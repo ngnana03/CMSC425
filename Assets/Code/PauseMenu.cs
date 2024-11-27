@@ -32,12 +32,12 @@ public class PauseMenu : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && isPaused)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Final Scene");
         }
         if (died && Input.GetKeyDown(KeyCode.Space))
         {
             died = false;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Final Scene");
         }
         if (died)
         {
