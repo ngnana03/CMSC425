@@ -5,7 +5,7 @@ using UnityEngine;
 public class Creaking : MonoBehaviour
 {
     public AudioSource audioSource;
-    public float cooldownTime = 5f; 
+    public float cooldownTime = 10f; 
 
     private bool canPlay = true;
 
