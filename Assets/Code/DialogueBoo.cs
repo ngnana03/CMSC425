@@ -10,7 +10,7 @@ public class DialogueBoo : MonoBehaviour, Interactionterminal
     public TextMeshProUGUI textcomponent;
     public string[] lines;
     public float textSpeed;
-    public GameObject box;
+    public GameObject box;      // Dialogue Panel
     private int index;
 
 
