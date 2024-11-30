@@ -30,7 +30,7 @@ public class HoveringSphere : MonoBehaviour
         Vector3 targetPosition = player.position + player.forward * distanceInFront + Vector3.up * height;
 
         // Check for spin attack input
-        if (Input.GetKeyDown(KeyCode.Return) && !isSpinning)
+        if (Input.GetMouseButtonDown(0) && !isSpinning)
         {
             StartSpin();
         }

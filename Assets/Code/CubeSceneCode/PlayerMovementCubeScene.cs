@@ -95,7 +95,7 @@ public class PlayerMovementCubeScene : MonoBehaviour
             else
             {
                 //double jump if player is not grounded and return is pressed
-                if (!isGrounded && Input.GetKeyDown(KeyCode.Return))
+                if (!isGrounded && Input.GetMouseButtonDown(0))
                 {
                     //prevent multiple double jumps consecutively
                     doubleJumpCount++;
