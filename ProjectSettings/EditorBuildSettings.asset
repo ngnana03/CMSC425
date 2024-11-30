@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JumpScare.unity
     guid: 3735ca33170dafc449adc8f3f8475354
+  - enabled: 1
+    path: Assets/Scenes/RedGreenCubes.unity
+    guid: 34f153791c6e84899b71d6e96e32b114
   m_configObjects: {}
