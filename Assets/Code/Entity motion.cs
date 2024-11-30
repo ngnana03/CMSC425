@@ -25,7 +25,7 @@ public class Entitymotion : MonoBehaviour
     canfollow = EntityFollow.canFollow;   
     if (canfollow) 
         {
-        timer = (timer + (Time.deltaTime * rotationspeed))% (2.0f * Mathf.PI);
+        timer = (timer + (Time.deltaTime * rotationspeed))% (1.0f * Mathf.PI);
 
         transform.eulerAngles = new Vector3(
         start.eulerAngles.x + (rotation.x * Mathf.Sin(timer)),
