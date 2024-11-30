@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class TeleportSystem : MonoBehaviour, Interactionterminal
 {
     // Start is called before the first frame update
@@ -79,7 +80,8 @@ public class TeleportSystem : MonoBehaviour, Interactionterminal
         {
             if (other.item_1 == true)
             {
-                other.transform.position = world_item_1.transform.position;
+            ////other.transform.position = world_item_1.transform.position;
+                SceneManager.LoadScene("JumpScare");
 
             }
             if (other.item_2 == true)
