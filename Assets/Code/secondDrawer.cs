@@ -41,6 +41,7 @@ public class secondDrawer : MonoBehaviour
 
     private IEnumerator ShowMessages()
     {
+        PauseMenu.isPaused = true;
         textMeshPro.text = "Inside the drawer, you find an old, tarnished locket with the name Joe engraved on it.";
         yield return new WaitForSeconds(4f); 
         textMeshPro.text = "Across the engraving is a deep, jagged scratch, as if someone tried to erase the name—or ensure it would never be forgotten.";
@@ -48,5 +49,7 @@ public class secondDrawer : MonoBehaviour
         textMeshPro.text = "Boo: Ohhhhhh so thats where Joe put it!";
         yield return new WaitForSeconds(4f); 
         textMeshPro.text = "Boo: He's been going crazy looking for it!\n *You decide to put the locket in your pocket for safe keeping*";
+        yield return new WaitForSeconds(4f);
+        PauseMenu.isPaused = false;
     }
 }

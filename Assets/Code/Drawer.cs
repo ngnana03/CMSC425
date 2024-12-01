@@ -41,6 +41,7 @@ public class Drawer : MonoBehaviour
 
     private IEnumerator ShowMessages()
     {
+        PauseMenu.isPaused = true;
         textMeshPro.text = "Inside the drawer, you find an old family photo....";
         yield return new WaitForSeconds(4f); // Wait for 5 seconds
         textMeshPro.text = "Their faces have been violently scratched out, leaving jagged tears where their features should be. Despite the damage, it feels like their eyeless silhouettes are still watching you.....";
@@ -48,5 +49,7 @@ public class Drawer : MonoBehaviour
         textMeshPro.text = "Boo: Oh ya! I remember Joe showing me them!";
         yield return new WaitForSeconds(4f); // Wait for 5 seconds
         textMeshPro.text = "Boo: Hahahahah .... good times.";
+        yield return new WaitForSeconds(4f);
+        PauseMenu.isPaused = false;
     }
 }

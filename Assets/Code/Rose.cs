@@ -41,6 +41,7 @@ public class Rose : MonoBehaviour
 
     private IEnumerator ShowMessages()
     {
+        PauseMenu.isPaused = true;
         textMeshPro.text = "On the dusty floor lies a single rose....";
         yield return new WaitForSeconds(4f);
         textMeshPro.text = "The stem points toward a painting on the wall—-a figure with bandages over their eyes, as if they’re staring directly at the flower.";
@@ -50,5 +51,8 @@ public class Rose : MonoBehaviour
         textMeshPro.text = "but when he gave her one, it died the moment it saw her....";
         yield return new WaitForSeconds(4f);
         textMeshPro.text = "because even flowers can’t handle that level of beauty!";
+        yield return new WaitForSeconds(4f);
+        PauseMenu.isPaused = false;
+
     }
 }
