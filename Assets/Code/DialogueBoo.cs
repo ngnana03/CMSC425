@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class DialogueBoo : MonoBehaviour, Interactionterminal
@@ -12,12 +13,16 @@ public class DialogueBoo : MonoBehaviour, Interactionterminal
     public float textSpeed;
     public GameObject box;      // Dialogue Panel
     private int index;
-
+    private AssetBundle bundle;
+    static PlayerMovement pmove;
+    public GameObject tutorial;
 
     public bool Interactwithitem(PlayerSystem other)
     {
+        tutorial.SetActive(false);
         box.SetActive(true);
         ActualStart();
+        pmove = other.GetComponent<PlayerMovement>();
 
         return true;
     }
@@ -72,7 +77,12 @@ public class DialogueBoo : MonoBehaviour, Interactionterminal
         }
         else
         {
+
+           // bundle = AssetBundle.LoadFromFile("Assets/Scenes");
             box.SetActive(false);
+            pmove.enabled = false;  
+            SceneManager.LoadScene("DatingFin");
+            
         }
     }
 }

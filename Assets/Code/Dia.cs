@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dia : MonoBehaviour
 {
@@ -55,7 +57,7 @@ public class Dia : MonoBehaviour
     public Transform Atext;         // need to make sure text is aware of each other
     public Transform Btext;
 
-    public static int BooSync = 0; // tracks likeabilty;
+    public bool end = false; // tracks likeabilty;
 
     public Transform BooResponse; // for Boo's lines
 
@@ -72,6 +74,8 @@ public class Dia : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         BooResponse.GetComponent<TextMeshPro>().text = BooReplyFirst;   // add gui 
         Atext.GetComponent<TextMeshPro>().text = BooA;      // Grab the text GUI component and set it to...
@@ -142,32 +146,48 @@ public class Dia : MonoBehaviour
 
                 if (currPos == "BooAAA")    // Good Ending!
                 {
-                    option1.SetActive(false);
-                    option2.SetActive(false);
-                    BooResponse.GetComponent<TextMeshPro>().text = "You and Boo travel the after life together as companions..";
+            Atext.GetComponent<TextMeshPro>().text = "";
+            Btext.GetComponent<TextMeshPro>().text = "";
+            BooResponse.GetComponent<TextMeshPro>().text = "You and Boo travel the after life together as companions..";
+            StartCoroutine(endCut("Title"));
                 }
 
                 if (currPos == "BooBBA" || currPos == "BooABB" || currPos == "BooBAB")    // Neutral Negative
                 {
-                    option1.SetActive(false);
-                    option2.SetActive(false);
-                    BooResponse.GetComponent<TextMeshPro>().text = "You and Boo go around the party and mingle. Boo seems to be incredibly disheartened and distant most of the time.";
-                }
+            Atext.GetComponent<TextMeshPro>().text = "";
+            Btext.GetComponent<TextMeshPro>().text = "";
+            BooResponse.GetComponent<TextMeshPro>().text = "You and Boo go around the party and mingle. Boo seems to be incredibly disheartened and distant most of the time.";
+            endCut("Title");
+
+        }
 
                 if (currPos == "BooBAA" || currPos == "BooABA" || currPos == "AAB") // Neutral Positive
                 {
-                    option1.SetActive(false);
-                    option2.SetActive(false);
-                    BooResponse.GetComponent<TextMeshPro>().text = "You and Boo go around the party and make normal conversation, becoming ok friends.";
-                }
+            Atext.GetComponent<TextMeshPro>().text = "";
+            Btext.GetComponent<TextMeshPro>().text = "";
+
+            BooResponse.GetComponent<TextMeshPro>().text = "You and Boo go around the party and make normal conversation, becoming ok friends.";
+         //   Debug.Log("AAAAA");
+            endCut("Title");
+        }
 
                 if (currPos == "BooBBB")        // Bad Ending
         {
-            option1.SetActive(false);
-            option2.SetActive(false);
+            Atext.GetComponent<TextMeshPro>().text = "";
+            Btext.GetComponent<TextMeshPro>().text = "";
             BooResponse.GetComponent<TextMeshPro>().text = "Boo goes to get refreshments but never comes back. You are left stranded at the party.";
+            endCut("Title");
         }
+
                 
+    }
+
+
+    private IEnumerator endCut(string sceneName)
+    {
+       // Debug.Log("BBBBB");
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene(sceneName);
     }
 
   
