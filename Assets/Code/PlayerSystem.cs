@@ -18,8 +18,8 @@ public class PlayerSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(transparancy);
-        if (ItemDetect && Input.GetKeyDown(KeyCode.F))
+        
+        if (ItemDetect && Input.GetKeyDown(KeyCode.F)&&(col.GetComponent<Interactionterminal>() != null))
         {
             var interactionterminal = col.GetComponent<Interactionterminal>();
             interactionterminal.Interactwithitem(this);
@@ -58,8 +58,7 @@ public class PlayerSystem : MonoBehaviour
         ItemDetect = true;
         
         col = other;
-        
-        
+
     }
 
     private void OnTriggerExit(Collider other)
