@@ -91,7 +91,8 @@ public class TeleportSystem : MonoBehaviour, Interactionterminal
             }
             if (other.item_3 == true)
             {
-                other.transform.position = world_item_3.transform.position;
+                //other.transform.position = world_item_3.transform.position;
+                SceneManager.LoadScene("Dating");
             }
             return true;
         }
