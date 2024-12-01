@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class EntityFoward : MonoBehaviour
     public GameObject entity;
     public GameObject player;
     public static bool played;
+    public TextMeshProUGUI textMeshPro;
 
     public void Start()
     {
@@ -21,6 +23,12 @@ public class EntityFoward : MonoBehaviour
             scriptToPause.enabled = false; // Disable the script
             yield return new WaitForSeconds(seconds); // Wait for the specified time
             scriptToPause.enabled = true; // Re-enable the script
+            textMeshPro.gameObject.SetActive(true);
+            textMeshPro.text = "Boo: Walk back slowly. Don't take your eyes off it.";
+            yield return new WaitForSeconds(4f);
+            textMeshPro.text = "Boo: Keep going......";
+            yield return new WaitForSeconds(3f);
+            textMeshPro.gameObject.SetActive(false);
         }
     }
     private void OnTriggerEnter(Collider other)
