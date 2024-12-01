@@ -7,7 +7,7 @@ public class PlayerSystem : MonoBehaviour
     bool ItemDetect = false;
     private readonly Collider[] _colliders = new Collider[3];
     Collider col;
-    float transparancy = 0;
+    float transparancy = 255;
     public  bool sleep = false;
     public Image imagetransparancy;
     public GameObject textsleepscreen;
