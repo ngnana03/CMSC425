@@ -12,7 +12,6 @@ public class PlayGame : MonoBehaviour
     }
     public void playGame()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene("Dating");
     }
     public void menu()

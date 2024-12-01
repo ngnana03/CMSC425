@@ -18,7 +18,7 @@ public class PlayerSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transparancy);
+        //Debug.Log(transparancy);
         if (ItemDetect && Input.GetKeyDown(KeyCode.F))
         {
             var interactionterminal = col.GetComponent<Interactionterminal>();
