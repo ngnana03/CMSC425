@@ -41,7 +41,7 @@ public class DialogueBoo : MonoBehaviour, Interactionterminal
 
     void ActualStart()
     {
-
+        
         textcomponent.text = string.Empty;
         StartDialogue();
     }
