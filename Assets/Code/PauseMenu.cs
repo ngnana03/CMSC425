@@ -32,12 +32,16 @@ public class PauseMenu : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && isPaused)
         {
+            //ResumeGame();
             SceneManager.LoadScene("Title");
+            ResumeGame();
         }
         if (died && Input.GetKeyDown(KeyCode.Space))
         {
             died = false;
+            //ResumeGame();
             SceneManager.LoadScene("Title");
+            ResumeGame();
         }
         if (died)
         {

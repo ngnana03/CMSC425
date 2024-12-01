@@ -1529,9 +1529,9 @@ MonoBehaviour:
   sleep: 0
   imagetransparancy: {fileID: 1129132443}
   textsleepscreen: {fileID: 1129132441}
-  item_1: 0
+  item_1: 1
   item_2: 0
-  item_3: 1
+  item_3: 0
 --- !u!114 &1458672815
 MonoBehaviour:
   m_ObjectHideFlags: 0
