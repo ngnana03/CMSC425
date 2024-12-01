@@ -86,7 +86,8 @@ public class TeleportSystem : MonoBehaviour, Interactionterminal
             }
             if (other.item_2 == true)
             {
-                other.transform.position = world_item_2.transform.position;
+                //other.transform.position = world_item_2.transform.position;
+                SceneManager.LoadScene("RedGreenCubes");
             }
             if (other.item_3 == true)
             {
