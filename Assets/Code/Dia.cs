@@ -176,6 +176,7 @@ public class Dia : MonoBehaviour
     {
        SceneTracker.Instance.isDatingSceneComplete = true;
         yield return new WaitForSeconds(10);        // Waits for 10 seconds before switching back to the end scene
+        currPos = "Boo";
         if (SceneTracker.Instance.CheckWinCondition())
         {
             SceneManager.LoadScene("Win Scene");

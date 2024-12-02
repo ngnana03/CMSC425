@@ -43,6 +43,9 @@ public class Win : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        //pause game
+        Time.timeScale = 0f;
+
         //set flag, scene was completed
         SceneTracker.Instance.isAdventureSceneComplete = true;
         //congratulate player and return to title screen if player completed all scenes
@@ -50,9 +53,6 @@ public class Win : MonoBehaviour
         {
             ReturnTitle();
         }
-
-        //pause game
-        Time.timeScale = 0f;
     }
 
     public void Retry()

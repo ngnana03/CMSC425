@@ -11,9 +11,6 @@ public class SceneTracker : MonoBehaviour
     public bool isAdventureSceneComplete;
     public bool isDatingSceneComplete;
 
-    public GameObject popupPanel; // Assign in the Inspector
-    public TextMeshProUGUI popupText; // Assign in the Inspector.
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -32,13 +29,7 @@ public class SceneTracker : MonoBehaviour
 
     public bool CheckWinCondition()
     {
-        //if (isHorrorSceneComplete && isAdventureSceneComplete && isDatingSceneComplete)
-        //{
-        //    ShowPopupMessage(); // Show the congratulatory message
-        //    return 
-        //}
         return isHorrorSceneComplete && isAdventureSceneComplete && isDatingSceneComplete;
-
     }
 
     public void BackToTitle()
