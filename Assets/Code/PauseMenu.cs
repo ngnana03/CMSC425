@@ -32,14 +32,14 @@ public class PauseMenu : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && isPaused)
         {
-            //ResumeGame();
             SceneManager.LoadScene("startscene");
             ResumeGame();
         }
         if (died && Input.GetKeyDown(KeyCode.Space))
         {
             died = false;
-            //ResumeGame();
+            //set flag,scene was completed scenes 
+            SceneTracker.Instance.isHorrorSceneComplete= true;
             SceneManager.LoadScene("startscene");
             ResumeGame();
         }
@@ -49,6 +49,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    //pauses the scene
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -56,6 +57,7 @@ public class PauseMenu : MonoBehaviour
         pausemenu.SetActive(true);
     }
 
+    //resumes the game
     public void ResumeGame()
     {
         Time.timeScale = 1f;
