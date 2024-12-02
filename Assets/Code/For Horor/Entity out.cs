@@ -12,7 +12,6 @@ public class Entityout : MonoBehaviour
 
     private void Start()
     {
-        textMeshPro.gameObject.SetActive(false);
         triggered = false;
     }
     private void OnTriggerEnter(Collider other)
@@ -31,13 +30,13 @@ public class Entityout : MonoBehaviour
         PauseMenu.isPaused = true;
         textMeshPro.gameObject.SetActive(true);
         textMeshPro.text = "*Something has opened....*";
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         textMeshPro.text = "Boo: Oh hey Joe! Didn't know you were still here!.....";
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         textMeshPro.text = "Boo: Why do you look so mad......";
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         textMeshPro.text = "Boo: Hey I don't mean to scare you but I think we should just keep walking and not turn around anymore.";
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(6f);
         textMeshPro.gameObject.SetActive(false) ;
         PauseMenu.isPaused = false;
     }

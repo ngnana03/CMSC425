@@ -7,6 +7,7 @@ public class Drawer : MonoBehaviour
 {
     public TextMeshProUGUI textMeshPro; // Assign this in the Inspector
     private bool playerInRange = false;
+    private bool playing = false;
 
     private void Start()
     {
@@ -33,8 +34,9 @@ public class Drawer : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.F))
+        if (playerInRange && Input.GetKeyDown(KeyCode.F) && !(playing))
         {
+            playing = true;
             StartCoroutine(ShowMessages());
         }
     }
@@ -43,13 +45,14 @@ public class Drawer : MonoBehaviour
     {
         PauseMenu.isPaused = true;
         textMeshPro.text = "Inside the drawer, you find an old family photo....";
-        yield return new WaitForSeconds(4f); // Wait for 5 seconds
+        yield return new WaitForSeconds(6f); // Wait for 5 seconds
         textMeshPro.text = "Their faces have been violently scratched out, leaving jagged tears where their features should be. Despite the damage, it feels like their eyeless silhouettes are still watching you.....";
-        yield return new WaitForSeconds(7f); // Wait for 5 seconds
+        yield return new WaitForSeconds(8f); // Wait for 5 seconds
         textMeshPro.text = "Boo: Oh ya! I remember Joe showing me them!";
-        yield return new WaitForSeconds(4f); // Wait for 5 seconds
+        yield return new WaitForSeconds(6f); // Wait for 5 seconds
         textMeshPro.text = "Boo: Hahahahah .... good times.";
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         PauseMenu.isPaused = false;
+        playing = false;
     }
 }
