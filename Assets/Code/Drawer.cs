@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+//allows for interaction with the drawer in the left first room
 public class Drawer : MonoBehaviour
 {
     public TextMeshProUGUI textMeshPro; // Assign this in the Inspector

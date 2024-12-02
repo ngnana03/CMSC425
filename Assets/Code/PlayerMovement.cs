@@ -33,17 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-      /*  if (dialogue)               // Makes it so that if dialogue is happening, player cannot move
-        {
-            Vector3 forward = transform.TransformDirection(Vector3.forward);
-            Vector3 right = transform.TransformDirection(Vector3.right);
-            float curSpeedX = 0;
-            float curSpeedY = 0;
-            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-        } */
-
-
-        if (!(PauseMenu.isPaused) && !(PauseMenu.died))
+        if (!(PauseMenu.isPaused) && !(PauseMenu.died)) //stops the playermovement when the scene is pasued or when the player dies
         {
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);

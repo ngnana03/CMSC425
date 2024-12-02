@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+//makes boo follow the player in the hallway but not into the rooms
 public class Follow : MonoBehaviour
 {
     public GameObject target; // The enemy's target
