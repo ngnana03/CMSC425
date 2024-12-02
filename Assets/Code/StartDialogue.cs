@@ -19,6 +19,7 @@ public class StartDialogue : MonoBehaviour, Interactionterminal
 
     public bool Interactwithitem(PlayerSystem other)
     {
+        this.GetComponent<BoxCollider>().isTrigger = false;     // Makes sure that the player cannot glitch text
         tutorial.SetActive(false);
         box.SetActive(true);
        // PlayerInput input = new PlayerInput();
@@ -77,7 +78,7 @@ public class StartDialogue : MonoBehaviour, Interactionterminal
         }
         else
         {
-
+            this.GetComponent<BoxCollider>().isTrigger = true;     // Makes sure that the player cannot glitch text
             // bundle = AssetBundle.LoadFromFile("Assets/Scenes");
             box.SetActive(false);
 
