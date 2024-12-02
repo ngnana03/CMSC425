@@ -8,7 +8,7 @@ public class LifeCounter : MonoBehaviour
     //reference to text box
     public TMP_Text livesText;
     //number of lives available 
-    private int lives = 5;
+    public int lives = 5;
     //reference to gameover object 
     public GameOver gameOver;
 

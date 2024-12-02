@@ -21,13 +21,26 @@ public class HoveringSphere : MonoBehaviour
     //Current time of spin
     private float spinTimer = 0f;
 
+    // spin attack audio effect, assigned in the Inspector
+    public AudioClip spinSound; 
+    private AudioSource audioSource;
+
     // Effect that appears when the sphere hits a wall, assigne in inspector
-    public GameObject particleEffect; 
+    public GameObject particleEffect;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
         // Position of sphere
         Vector3 targetPosition = player.position + player.forward * distanceInFront + Vector3.up * height;
+
+        //Make the ghost look at the player
+        transform.LookAt(player);
+
 
         // Check for spin attack input
         if (Input.GetMouseButtonDown(0) && !isSpinning)
@@ -51,6 +64,9 @@ public class HoveringSphere : MonoBehaviour
     {
         isSpinning = true;
         spinTimer = spinDuration;
+
+        //play sound
+        audioSource.PlayOneShot(spinSound);
     }
 
     void UpdateSpin()

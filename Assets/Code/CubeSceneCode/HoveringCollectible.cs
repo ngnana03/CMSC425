@@ -16,9 +16,14 @@ public class HoveringCollectible : MonoBehaviour
     //Start position of collectible in the scene
     private Vector3 startPosition;
 
+    // collect audio effect, assigned in the inspector
+    public AudioClip collectSound;
+    private AudioSource audioSource;
+
     void Start()
     {
         startPosition = transform.position;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,10 +35,13 @@ public class HoveringCollectible : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         //trigger collection when the player object collides with the collectible
         if (other.CompareTag("Player"))
         {
             Collect();
+            //play sound
+            audioSource.PlayOneShot(collectSound);
         }
     }
 
@@ -42,12 +50,15 @@ public class HoveringCollectible : MonoBehaviour
         //effect of collectible when collected
         Instantiate(collectEffect, transform.position, Quaternion.identity);
 
+        //disable collider to avoid sound from triggering multiple times
+        this.GetComponent<Collider>().enabled = false;
+
         // add player logic here, e.g., increase score, health, etc.
         //Debug.Log("Collected!");
         //increase score
         collectibleCounter.AddCollectible();
 
-        // Destroy the collectible object
-        Destroy(gameObject);
+        // Destroy the collectible object, delay for 3 seconds to allow sound to play
+        Destroy(gameObject, 4f);
     }
 }

@@ -21,6 +21,12 @@ public class PlayerMovementCubeScene : MonoBehaviour
     // LifeCounter reference, assigned in inspector
     public LifeCounter lives;
 
+    // jumping audio effect, assigned in the inspector
+    public AudioClip jumpSound;
+    // falling audio effect, assigned in the inspector
+    public AudioClip fallingSound;
+    private AudioSource audioSource;
+
     // Player movement and camera variables
     public Camera playerCamera;
     public float walkSpeed = 6f;
@@ -36,6 +42,7 @@ public class PlayerMovementCubeScene : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         moveDirection = Vector3.zero;
         startingPosition = transform.position;
         characterController = GetComponent<CharacterController>();
@@ -54,7 +61,8 @@ public class PlayerMovementCubeScene : MonoBehaviour
         float currentXSpeed;
         float currentYSpeed;
 
-        //Calculate current speed of player depending on if run key is pressed or not
+        //Calculate current speed of player depending on if run key is pressed or not, using GetAxis allows for more control and cluster buttons together
+        //Horizontal reads A and D input. Verticla reads W and S input.
         if (isRunning && isGrounded)
         {
             currentXSpeed = runSpeed * Input.GetAxis("Vertical");
@@ -68,19 +76,18 @@ public class PlayerMovementCubeScene : MonoBehaviour
 
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * currentXSpeed) + (right * currentYSpeed);
-
-        //Camera movement
-        rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
-
+        
         if (characterController.enabled)
         {
-            if (Input.GetButton("Jump") && isGrounded)
+            /*
+             * Main feature of the scene is that the cubes flip after the player jumps, this mechanic makes it so that players think before they jump,
+             * instead of running to the end goal
+             */
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
                 moveDirection.y = jumpPower;
-                
+                //play sound
+                audioSource.PlayOneShot(jumpSound);
             }
             else
             {
@@ -126,6 +133,12 @@ public class PlayerMovementCubeScene : MonoBehaviour
                 lives.LoseLife();
                 //characterController.enabled = true;
             }
+
+            //Camera movement
+            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }        
     }
 
@@ -146,7 +159,10 @@ public class PlayerMovementCubeScene : MonoBehaviour
         else
         {
             transform.position = startingPosition;
-        }        
+        }
+
+        //play sound
+        audioSource.PlayOneShot(fallingSound);
 
         // Reset velocity 
         moveDirection = Vector3.zero;
