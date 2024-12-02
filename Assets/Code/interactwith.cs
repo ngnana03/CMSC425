@@ -5,6 +5,7 @@ using System;
 public class interactwith : MonoBehaviour, Interactionterminal
 {
     bool isfloating = false;
+    // give input with how fast the bed moves 
     public int speed = 2;
     public bool Interactwithitem(PlayerSystem other)
     {
@@ -14,15 +15,15 @@ public class interactwith : MonoBehaviour, Interactionterminal
     }
     IEnumerator floating()
     {
+        // do the move, and do the wait for seconds so you cant do it mutple times at the same time. 
         yield return move();
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2*2);
     }
 
 
     IEnumerator move()
     {
-        // This method is also called as a coroutine, so you
-        // will need at least one yield statment in it somewhere.
+        // this is used to make the bed flaot 
         if (isfloating)
         {
             yield break;
@@ -38,6 +39,7 @@ public class interactwith : MonoBehaviour, Interactionterminal
             {
                 deltatime = Math.Abs(speed - (t - deltatime));
             }
+            // use the positision to float the bed.
             transform.position = transform.position + new Vector3(0, 2 / (speed), 0) * deltatime;
            
             yield return null;
@@ -56,6 +58,7 @@ public class interactwith : MonoBehaviour, Interactionterminal
 
             yield return null;
         }
+
         isfloating = false;
         yield return null;
     }
