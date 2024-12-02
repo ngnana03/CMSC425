@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 public class interactwith : MonoBehaviour, Interactionterminal
 {
     bool isfloating = false;
     // give input with how fast the bed moves 
     public int speed = 2;
+    public TextMeshProUGUI textMeshPro;
     public bool Interactwithitem(PlayerSystem other)
     {
         StartCoroutine(floating());
@@ -61,6 +63,21 @@ public class interactwith : MonoBehaviour, Interactionterminal
 
         isfloating = false;
         yield return null;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            textMeshPro.text = "Press F";
+            textMeshPro.gameObject.SetActive(true); // Ensure text is visible
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            textMeshPro.gameObject.SetActive(false);
+        }
     }
 }
  
