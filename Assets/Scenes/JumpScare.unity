@@ -9149,7 +9149,7 @@ MonoBehaviour:
   playerCamera: {fileID: 114107636}
   walkSpeed: 6
   runSpeed: 6
-  jumpPower: 7
+  jumpPower: 0
   gravity: 11
   lookSpeed: 3
   lookXLimit: 45
