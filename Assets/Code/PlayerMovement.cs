@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//https://youtu.be/1uW-GbHrtQc?si=En1zl4XaANhCEMJQ this is what was used for the movement code
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
