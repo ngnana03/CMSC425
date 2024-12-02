@@ -2570,6 +2570,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructibleWall 10
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19231e95816ed4d81bc964473b9a6a6d, type: 3}
+      propertyPath: m_TagString
+      value: DestructibleWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8392,160 +8396,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98cbe2b7b44354998bb1745ba5bbc192, type: 3}
   m_PrefabInstance: {fileID: 1498186621}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &285779007
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 285779011}
-  - component: {fileID: 285779010}
-  - component: {fileID: 285779009}
-  - component: {fileID: 285779008}
-  - component: {fileID: 285779013}
-  - component: {fileID: 285779014}
-  m_Layer: 6
-  m_Name: SpinAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!135 &285779008
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285779007}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &285779009
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285779007}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &285779010
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285779007}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &285779011
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285779007}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.7, y: 10, z: -14.23}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &285779013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285779007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efcb71b541544c9cb227a230907b33b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1558731330}
-  distanceInFront: 4
-  height: 0
-  followSpeed: 10
-  spinDuration: 1
-  spinSpeed: 360
-  spinSound: {fileID: 0}
-  particleEffect: {fileID: 8047474515814719865, guid: 9c8083daa3ff646b9a04f6adf674331e, type: 3}
---- !u!54 &285779014
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285779007}
-  serializedVersion: 4
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &293632335
 GameObject:
   m_ObjectHideFlags: 0
@@ -14829,7 +14679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winCanvas: {fileID: 406545677}
-  menuSceneName: Title
+  menuSceneName: startscene
   winSound: {fileID: 8300000, guid: 2e292879817db4822817bbeb2a6af093, type: 3}
   player: {fileID: 1558731324}
 --- !u!82 &406545680
@@ -28216,7 +28066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 653713170}
-  menuSceneName: Title
+  menuSceneName: startscene
   gameOverSound: {fileID: 8300000, guid: 2d9a10f0c5dd04b9f9c25b3f833a627c, type: 3}
   player: {fileID: 1558731324}
 --- !u!82 &653713173
@@ -51089,15 +50939,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1816338034857643854, guid: 250db13ec24124603800a8fd5049993a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.2
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 1816338034857643854, guid: 250db13ec24124603800a8fd5049993a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.73
+      value: 10.4
       objectReference: {fileID: 0}
     - target: {fileID: 1816338034857643854, guid: 250db13ec24124603800a8fd5049993a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -9.9
       objectReference: {fileID: 0}
     - target: {fileID: 1816338034857643854, guid: 250db13ec24124603800a8fd5049993a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51428,6 +51278,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19231e95816ed4d81bc964473b9a6a6d, type: 3}
       propertyPath: m_Name
       value: DestructibleWall 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19231e95816ed4d81bc964473b9a6a6d, type: 3}
+      propertyPath: m_TagString
+      value: DestructibleWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -79014,7 +78868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1558731330}
   distanceInFront: 4
-  height: 1
+  height: 0
   followSpeed: 10
   spinDuration: 1
   spinSpeed: 360
@@ -83023,6 +82877,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19231e95816ed4d81bc964473b9a6a6d, type: 3}
       propertyPath: m_Name
       value: DestructibleWall 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19231e95816ed4d81bc964473b9a6a6d, type: 3}
+      propertyPath: m_TagString
+      value: DestructibleWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -103948,5 +103806,4 @@ SceneRoots:
   - {fileID: 671754346}
   - {fileID: 1249553499}
   - {fileID: 1880050884}
-  - {fileID: 285779011}
   - {fileID: 1176791940}
