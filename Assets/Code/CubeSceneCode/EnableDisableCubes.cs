@@ -1,6 +1,6 @@
 using UnityEngine;
 
-//This script flips the cubes when player jumps
+//This script flips the cubes when player jumps, takes advantage of hierarchy structure to find all the red and green cubes in the scene
 public class EnableDisableCube : MonoBehaviour
 {
     //Arrays to hold colliders and renderers of red and green cubes
