@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-
+//activates the entity follow script and plays text
 public class EntityFoward : MonoBehaviour
 {
     public MonoBehaviour scriptToPause; // Assign the script you want to pause in the Inspector
@@ -36,10 +36,10 @@ public class EntityFoward : MonoBehaviour
         // Check the tag of the object entering the trigger
         if (other.CompareTag("Player") && played == false)
         {
-            EntityFollow.canFollow = true;
+            EntityFollow.canFollow = true; //makes the entity walk towards the player
             StartCoroutine(PauseCoroutine(5f));
-            player.transform.rotation = Quaternion.LookRotation(entity.transform.position);
-            played = true;
+            player.transform.rotation = Quaternion.LookRotation(entity.transform.position); // makes the player look at the entity
+            played = true; // makes sure that the trigger only activates once
         }
     }
 

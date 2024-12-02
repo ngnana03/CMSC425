@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//makes audio played when the collider is interacted with and allows a cooldown
 public class Creaking : MonoBehaviour
 {
     public AudioSource audioSource;

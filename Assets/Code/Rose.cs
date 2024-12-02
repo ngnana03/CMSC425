@@ -13,6 +13,7 @@ public class Rose : MonoBehaviour
     {
         textMeshPro.gameObject.SetActive(false);
     }
+    //allows the player activate text with F
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) 
@@ -22,18 +23,19 @@ public class Rose : MonoBehaviour
             textMeshPro.gameObject.SetActive(true); 
         }
     }
-
+    //deactivates the text and doesn't allow text to be activated while the player is not in the collider
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            playerInRange = false;
-            textMeshPro.gameObject.SetActive(false);
+            playerInRange = false; //tells the script that the player is in the collider
+            textMeshPro.gameObject.SetActive(false); //deactivates the text
         }
     }
 
     private void Update()
     {
+        //looks for F input when the player is in the collider and the text isn't already playing
         if (playerInRange && Input.GetKeyDown(KeyCode.F) && !(playing))
         {
             playing = true;
@@ -43,7 +45,7 @@ public class Rose : MonoBehaviour
 
     private IEnumerator ShowMessages()
     {
-        PauseMenu.isPaused = true;
+        PauseMenu.isPaused = true; //the playermovement is paused
         textMeshPro.text = "On the dusty floor lies a single rose....";
         yield return new WaitForSeconds(6f);
         textMeshPro.text = "The stem points toward a painting on the wall. The painting shows a figure with bandages over their eyes. ";
@@ -56,8 +58,8 @@ public class Rose : MonoBehaviour
         yield return new WaitForSeconds(6f);
         textMeshPro.text = "Boo: because even flowers can’t handle that level of beauty!";
         yield return new WaitForSeconds(6f);
-        PauseMenu.isPaused = false;
-        playing = false;
+        PauseMenu.isPaused = false; //playermovement is resumed
+        playing = false; //the script can be played again
 
     }
 }
