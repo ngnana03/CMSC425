@@ -19,22 +19,26 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        //checks for esc input
         if(Input.GetKeyDown(KeyCode.Escape) && !died)
         {
+            //if the screen is paused it will resume the game
             if(isPaused)
             {
                 ResumeGame();
             }
-            else
+            else //if the game isnt paused it will resume the game
             {
                 PauseGame();
             }
         }
+        //checks for spacebar input when scene is paused
         if (Input.GetKeyDown(KeyCode.Space) && isPaused)
         {
             SceneManager.LoadScene("startscene");
             ResumeGame();
         }
+        //checks for spacebar input when died screen is activated 
         if (died && Input.GetKeyDown(KeyCode.Space))
         {
             died = false;
@@ -43,6 +47,7 @@ public class PauseMenu : MonoBehaviour
             SceneManager.LoadScene("startscene");
             ResumeGame();
         }
+        //if the died vaiable is true it will activate the died method
         if (died)
         {
             Died();
@@ -65,6 +70,7 @@ public class PauseMenu : MonoBehaviour
         pausemenu.SetActive(false);
     }
 
+    //activates the death screen
     public void Died()
     {
         Time.timeScale = 0f;

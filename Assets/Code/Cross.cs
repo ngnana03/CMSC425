@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+//Allows for interaction with the cross
 public class Cross : MonoBehaviour
 {
     public TextMeshProUGUI textMeshPro;
@@ -13,6 +13,7 @@ public class Cross : MonoBehaviour
     {
         textMeshPro.gameObject.SetActive(false);
     }
+    //allows the player activate text with F
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -22,7 +23,7 @@ public class Cross : MonoBehaviour
             textMeshPro.gameObject.SetActive(true);
         }
     }
-
+    //deactivates the text and doesn't allow text to be activated while the player is not in the collider
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -34,6 +35,7 @@ public class Cross : MonoBehaviour
 
     private void Update()
     {
+        //looks for F input when the player is in the collider and the text isn't already playing
         if (playerInRange && Input.GetKeyDown(KeyCode.F) && !(playing))
         {
             playing = true;
