@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Rose : MonoBehaviour
+public class Cross : MonoBehaviour
 {
     public TextMeshProUGUI textMeshPro;
     private bool playerInRange = false;
@@ -15,11 +15,11 @@ public class Rose : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            textMeshPro.text = "Press F to look at the rose";
-            textMeshPro.gameObject.SetActive(true); 
+            textMeshPro.text = "Press F to look at the cross";
+            textMeshPro.gameObject.SetActive(true);
         }
     }
 
@@ -44,20 +44,24 @@ public class Rose : MonoBehaviour
     private IEnumerator ShowMessages()
     {
         PauseMenu.isPaused = true;
-        textMeshPro.text = "On the dusty floor lies a single rose....";
+        textMeshPro.text = "On the table rests an old, weathered cross...";
         yield return new WaitForSeconds(6f);
-        textMeshPro.text = "The stem points toward a painting on the wall. The painting shows a figure with bandages over their eyes. ";
+        textMeshPro.text = "its surface marred with deep scratches and burn marks...";
         yield return new WaitForSeconds(6f);
-        textMeshPro.text =  "Even though the figures face is covered, you cant help but feel as if they’re staring directly at the flower.";
+        textMeshPro.text = "Around its base, the wood is stained dark, as if something had seeped into it over time.";
         yield return new WaitForSeconds(6f);
-        textMeshPro.text = "Boo: Roses were Joe's mom's favorite flower....";
+        textMeshPro.text = "Despite the stillness of the room, it feels like the cross is waiting for something...or someone....";
         yield return new WaitForSeconds(6f);
-        textMeshPro.text = "Boo: but when he gave her one, it died the moment it saw her....";
+        textMeshPro.text = "Boo: Joes mom always used to carry around that cross.";
         yield return new WaitForSeconds(6f);
-        textMeshPro.text = "Boo: because even flowers can’t handle that level of beauty!";
+        textMeshPro.text = "Boo: I swear it was the only thing keeping her from losing her temper...";
+        yield return new WaitForSeconds(6f);
+        textMeshPro.text = "Boo: Seriously I'm not joking.....";
+        yield return new WaitForSeconds(6f);
+        textMeshPro.text = "Boo: CROSS my heart! HAHAHHAHAHHA";
         yield return new WaitForSeconds(6f);
         PauseMenu.isPaused = false;
-        playing = false;
+        playing= false;
 
     }
 }
