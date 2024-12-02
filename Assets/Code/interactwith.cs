@@ -37,6 +37,7 @@ public class interactwith : MonoBehaviour, Interactionterminal
             float deltatime = Time.deltaTime;
 
             t = t + deltatime;
+            //the speed can be set, the bed will move faster or slower based on speed.
             if (t > speed)
             {
                 deltatime = Math.Abs(speed - (t - deltatime));
@@ -64,6 +65,7 @@ public class interactwith : MonoBehaviour, Interactionterminal
         isfloating = false;
         yield return null;
     }
+    // displaying the Press F in the screen of the player when it comes in range. 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
