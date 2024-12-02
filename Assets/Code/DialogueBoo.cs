@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
+/* This code has some aspects from the video: https://www.youtube.com/watch?v=8oTYabhj248 */
 public class DialogueBoo : MonoBehaviour, Interactionterminal
 {
     public TextMeshProUGUI textcomponent;
@@ -19,7 +20,8 @@ public class DialogueBoo : MonoBehaviour, Interactionterminal
 
     public bool Interactwithitem(PlayerSystem other)
     {
-        tutorial.SetActive(false);
+        this.GetComponent<BoxCollider>().isTrigger = false;     // Makes sure that the player cannot glitch text
+        tutorial.SetActive(false);      // gets rid of tutorial 
         box.SetActive(true);
         ActualStart();
         pmove = other.GetComponent<PlayerMovement>();
@@ -78,7 +80,8 @@ public class DialogueBoo : MonoBehaviour, Interactionterminal
         else
         {
 
-           // bundle = AssetBundle.LoadFromFile("Assets/Scenes");
+            // bundle = AssetBundle.LoadFromFile("Assets/Scenes");
+            this.GetComponent<BoxCollider>().isTrigger = true;
             box.SetActive(false);
             pmove.enabled = false;  
             SceneManager.LoadScene("DatingFin");
