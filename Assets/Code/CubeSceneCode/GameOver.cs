@@ -7,7 +7,7 @@ public class GameOver : MonoBehaviour
     //Canvas object reference
     public GameObject gameOverCanvas;
     // Name of the scene to return to
-    public string menuSceneName = "Title";
+    public string menuSceneName = "startscene";
 
     // game over audio effect, assigned in the inspector
     public AudioClip gameOverSound;

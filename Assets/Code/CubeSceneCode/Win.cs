@@ -7,7 +7,7 @@ public class Win : MonoBehaviour
     //Canvas object reference
     public GameObject winCanvas;
     // Name of the scene to return to
-    public string menuSceneName = "Title";
+    public string menuSceneName = "startscene";
 
     // win audio effect, assigned in the inspector
     public AudioClip winSound;
