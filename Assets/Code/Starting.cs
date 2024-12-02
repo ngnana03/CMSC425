@@ -6,7 +6,6 @@ using UnityEngine;
 public class Starting : MonoBehaviour
 {
     public TextMeshProUGUI textMeshPro; // Assign this in the Inspector
-    private bool playerInRange = false;
 
     private void Start()
     {
