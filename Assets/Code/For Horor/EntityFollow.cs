@@ -42,15 +42,10 @@ public class EntityFollow : MonoBehaviour
                 boo.transform.position += moveDirection;
             }
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        // Check the tag of the object entering the trigger
-        if (other.CompareTag("Player"))
+        if (PauseMenu.died == true)
         {
             textMeshProUGUI.gameObject.SetActive(false);
-            PauseMenu.died = true;
         }
     }
 }
