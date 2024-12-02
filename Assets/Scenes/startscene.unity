@@ -465,8 +465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4865dfafc8443fc81c6b157df72d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  completeCount: 0
-  totalScenesToComplete: 3
   isHorrorSceneComplete: 0
   isAdventureSceneComplete: 0
   isDatingSceneComplete: 0

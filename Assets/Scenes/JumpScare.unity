@@ -10810,7 +10810,7 @@ MonoBehaviour:
   scriptToPause: {fileID: 1280855164}
   entity: {fileID: 4269021997429380077}
   player: {fileID: 1280855163}
-  textMeshPro: {fileID: 534504844}
+  textMeshPro: {fileID: 1118340228}
 --- !u!82 &1502158088
 AudioSource:
   m_ObjectHideFlags: 0
