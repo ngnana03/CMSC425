@@ -40,7 +40,7 @@ public class PauseMenu : MonoBehaviour
         {
             died = false;
             //ResumeGame();
-            SceneManager.LoadScene("Title");
+            SceneManager.LoadScene("startscene");
             ResumeGame();
         }
         if (died)
