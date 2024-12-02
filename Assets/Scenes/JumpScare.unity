@@ -9623,6 +9623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  textMeshPro: {fileID: 1516423337}
 --- !u!1 &1321403007
 GameObject:
   m_ObjectHideFlags: 0

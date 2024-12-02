@@ -41,7 +41,7 @@ public class DialogueBoo : MonoBehaviour, Interactionterminal
             else
             {
                 StopAllCoroutines();
-                textcomponent.text = lines[index];
+                textcomponent.text = lines[index];  
             }
         }
     }
