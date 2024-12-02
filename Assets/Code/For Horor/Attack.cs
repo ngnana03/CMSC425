@@ -17,15 +17,9 @@ public class Attack : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             EntityFollow.attack = true;
-            StartCoroutine(Messages());
+            textMeshPro.gameObject.SetActive(true);
+            textMeshPro.text = "Bob: JOE STOP!!";
         }
     }
 
-    private IEnumerator Messages()
-    {
-        textMeshPro.gameObject.SetActive(true);
-        textMeshPro.text = "Bob: JOE STOP!!";
-        yield return new WaitForSeconds(2f);
-        textMeshPro.gameObject.SetActive(false);
-    }
 }
