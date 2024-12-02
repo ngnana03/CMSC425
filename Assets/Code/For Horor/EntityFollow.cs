@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public class EntityFollow : MonoBehaviour
     private Rigidbody rb;
     public static bool canFollow;
     public static bool attack;
-
+    public TextMeshProUGUI textMeshProUGUI;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -48,6 +49,7 @@ public class EntityFollow : MonoBehaviour
         // Check the tag of the object entering the trigger
         if (other.CompareTag("Player"))
         {
+            textMeshProUGUI.gameObject.SetActive(false);
             PauseMenu.died = true;
         }
     }
