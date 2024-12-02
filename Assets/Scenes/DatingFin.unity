@@ -337,7 +337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.71, y: -4.31}
+  m_AnchoredPosition: {x: -3.71, y: -5.27}
   m_SizeDelta: {x: 20.0888, y: 2.0688}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &39808340
@@ -355,39 +355,39 @@ MonoBehaviour:
   canvas: {fileID: 0}
   option1: {fileID: 286397173}
   option2: {fileID: 39808335}
-  BooA: I'd like to get to know you better. You seem... interesting.
+  BooA: 'Option 1: I''d like to get to know you better. You seem... interesting.'
   BooReplyFirst: I've been waiting for someone bold enough to accompany me. Aren't
     you brave, or just foolish? I'd be lying if I said I wasn't intrigued.
-  BooAA: "I\u2019m not sure... but I\u2019ve always wanted to understand the mysteries
-    of life"
-  BooAB: "Uh, I\u2019m not sure I\u2019m ready for all of that. Maybe we should just
-    keep it simple."
+  BooAA: "Option 1: I\u2019m not sure... but I\u2019ve always wanted to understand
+    the mysteries of life"
+  BooAB: "Option 2: Uh, I\u2019m not sure I\u2019m ready for all of that. Maybe we
+    should just keep it simple."
   BooReplyA: 'Not many are brave enough to see the beauty in the other side. Tell
     me.. what is it you seek from this world? Perhaps I could help. '
-  BooB: Ghosts are a little too... creepy for me.
-  BooBA: "I\u2019m sorry if I offended you. This is all new to me. If you\u2019re
+  BooB: 'Option 2: Ghosts are a little too... creepy for me.'
+  BooBA: "Option 1: I\u2019m sorry if I offended you. This is all new to me. If you\u2019re
     willing to, I\u2019d love to talk more."
-  BooBB: I think I prefer the living for now. Thanks, but lets just get this over
-    with.
+  BooBB: 'Option 2: I think I prefer the living for now. Thanks, but lets just get
+    this over with.'
   BooReplyB: Afraid of a little company from the afterlife? Hm I thought you were
     different..
-  BooAAA: Companions sounds..great! Travelling with a ghost sounds awesome!
-  BooAAB: Hmm, companions in this life sounds good for now. Let me learn about you
-    more before I decide the rest.
+  BooAAA: 'Option 1: Companions sounds..great! Travelling with a ghost sounds awesome!'
+  BooAAB: 'Option 2: Hmm, companions in this life sounds good for now. Let me learn
+    about you more before I decide the rest.'
   BooReplyAA: "You\u2019re more like me than you realize. We could be\u2026 companions
     in this life, and the next. What do you think?"
-  BooABA: I'll help to the extent I can.
-  BooABB: Sounds like a lot of work..lets just enjoy the party
+  BooABA: 'Option 1: I''ll help to the extent I can.'
+  BooABB: 'Option 2: Sounds like a lot of work..lets just enjoy the party'
   BooReplyAB: 'Well! In simple terms, I''m a wandering ghost going to silly parties
     in hope of finding someone like you to help me. Would you help an old ghost tie
     loose ends? '
-  BooBAA: I'll help to the extent I can.
-  BooBAB: Sounds like a lot of work..lets just enjoy the party
+  BooBAA: 'Option 1: I''ll help to the extent I can.'
+  BooBAB: 'Option 2: Sounds like a lot of work..lets just enjoy the party'
   BooReplyBA: 'Well! A bit about me, I''m a wandering ghost going to silly parties
     in hope of finding someone like you to help me. Would you help an old ghost tie
     loose ends? '
-  BooBBA: Sure, nothing else better to do..
-  BooBBB: No, I'll stay right here.
+  BooBBA: 'Option 1: Sure, nothing else better to do..'
+  BooBBB: 'Option 2: No, I''ll stay right here.'
   BooReplyBB: What a sour attitude... I'm going to get some refreshments, would you
     like to join?
   Atext: {fileID: 286397177}
@@ -805,7 +805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.71, y: -0.31}
+  m_AnchoredPosition: {x: -3.71, y: 0.2}
   m_SizeDelta: {x: 20.0888, y: 2.0688}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286397178
@@ -823,39 +823,39 @@ MonoBehaviour:
   canvas: {fileID: 0}
   option1: {fileID: 286397173}
   option2: {fileID: 39808335}
-  BooA: I'd like to get to know you better. You seem... interesting.
+  BooA: 'Option 1: I''d like to get to know you better. You seem... interesting.'
   BooReplyFirst: I've been waiting for someone bold enough to accompany me. Aren't
     you brave, or just foolish? I'd be lying if I said I wasn't intrigued.
-  BooAA: "I\u2019m not sure... but I\u2019ve always wanted to understand the mysteries
-    of life"
-  BooAB: "Uh, I\u2019m not sure I\u2019m ready for all of that. Maybe we should just
-    keep it simple."
+  BooAA: "Option 1: I\u2019m not sure... but I\u2019ve always wanted to understand
+    the mysteries of life"
+  BooAB: "Option 2: Uh, I\u2019m not sure I\u2019m ready for all of that. Maybe we
+    should just keep it simple."
   BooReplyA: 'Not many are brave enough to see the beauty in the other side. Tell
     me.. what is it you seek from this world? Perhaps I could help. '
-  BooB: Ghosts are a little too... creepy for me.
-  BooBA: "I\u2019m sorry if I offended you. This is all new to me. If you\u2019re
+  BooB: 'Option 2: Ghosts are a little too... creepy for me.'
+  BooBA: "Option 1: I\u2019m sorry if I offended you. This is all new to me. If you\u2019re
     willing to, I\u2019d love to talk more."
-  BooBB: I think I prefer the living for now. Thanks, but lets just get this over
-    with.
+  BooBB: 'Option 2: I think I prefer the living for now. Thanks, but lets just get
+    this over with.'
   BooReplyB: Afraid of a little company from the afterlife? Hm I thought you were
     different..
-  BooAAA: Companions sounds..great! Travelling with a ghost sounds awesome!
-  BooAAB: Hmm, companions in this life sounds good for now. Let me learn about you
-    more before I decide the rest.
+  BooAAA: 'Option 1: Companions sounds..great! Travelling with a ghost sounds awesome!'
+  BooAAB: 'Option 2: Hmm, companions in this life sounds good for now. Let me learn
+    about you more before I decide the rest.'
   BooReplyAA: "You\u2019re more like me than you realize. We could be\u2026 companions
     in this life, and the next. What do you think?"
-  BooABA: I'll help to the extent I can.
-  BooABB: Sounds like a lot of work..lets just enjoy the party
+  BooABA: 'Option 1: I''ll help to the extent I can.'
+  BooABB: 'Option 2: Sounds like a lot of work..lets just enjoy the party'
   BooReplyAB: 'Well! In simple terms, I''m a wandering ghost going to silly parties
     in hope of finding someone like you to help me. Would you help an old ghost tie
     loose ends? '
-  BooBAA: I'll help to the extent I can.
-  BooBAB: Sounds like a lot of work..lets just enjoy the party
+  BooBAA: 'Option 1: I''ll help to the extent I can.'
+  BooBAB: 'Option 2: Sounds like a lot of work..lets just enjoy the party'
   BooReplyBA: 'Well! A bit about me, I''m a wandering ghost going to silly parties
     in hope of finding someone like you to help me. Would you help an old ghost tie
     loose ends? '
-  BooBBA: Sure, nothing else better to do..
-  BooBBB: No, I'll stay right here.
+  BooBBA: 'Option 1: Sure, nothing else better to do..'
+  BooBBB: 'Option 2: No, I''ll stay right here.'
   BooReplyBB: What a sour attitude... I'm going to get some refreshments, would you
     like to join?
   Atext: {fileID: 286397177}
@@ -1099,7 +1099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.71, y: 7.23}
+  m_AnchoredPosition: {x: -3.71, y: 8.05}
   m_SizeDelta: {x: 20.0888, y: 2.0688}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &968846722
@@ -1117,39 +1117,39 @@ MonoBehaviour:
   canvas: {fileID: 0}
   option1: {fileID: 286397173}
   option2: {fileID: 39808335}
-  BooA: I'd like to get to know you better. You seem... interesting.
+  BooA: 'Option 1: I''d like to get to know you better. You seem... interesting.'
   BooReplyFirst: I've been waiting for someone bold enough to accompany me. Aren't
     you brave, or just foolish? I'd be lying if I said I wasn't intrigued.
-  BooAA: "I\u2019m not sure... but I\u2019ve always wanted to understand the mysteries
-    of life"
-  BooAB: "Uh, I\u2019m not sure I\u2019m ready for all of that. Maybe we should just
-    keep it simple."
+  BooAA: "Option 1: I\u2019m not sure... but I\u2019ve always wanted to understand
+    the mysteries of life"
+  BooAB: "Option 2: Uh, I\u2019m not sure I\u2019m ready for all of that. Maybe we
+    should just keep it simple."
   BooReplyA: 'Not many are brave enough to see the beauty in the other side. Tell
     me.. what is it you seek from this world? Perhaps I could help. '
-  BooB: Ghosts are a little too... creepy for me.
-  BooBA: "I\u2019m sorry if I offended you. This is all new to me. If you\u2019re
+  BooB: 'Option 2: Ghosts are a little too... creepy for me.'
+  BooBA: "Option 1: I\u2019m sorry if I offended you. This is all new to me. If you\u2019re
     willing to, I\u2019d love to talk more."
-  BooBB: I think I prefer the living for now. Thanks, but lets just get this over
-    with.
+  BooBB: 'Option 2: I think I prefer the living for now. Thanks, but lets just get
+    this over with.'
   BooReplyB: Afraid of a little company from the afterlife? Hm I thought you were
     different..
-  BooAAA: Companions sounds..great! Travelling with a ghost sounds awesome!
-  BooAAB: Hmm, companions in this life sounds good for now. Let me learn about you
-    more before I decide the rest.
+  BooAAA: 'Option 1: Companions sounds..great! Travelling with a ghost sounds awesome!'
+  BooAAB: 'Option 2: Hmm, companions in this life sounds good for now. Let me learn
+    about you more before I decide the rest.'
   BooReplyAA: "You\u2019re more like me than you realize. We could be\u2026 companions
     in this life, and the next. What do you think?"
-  BooABA: I'll help to the extent I can.
-  BooABB: Sounds like a lot of work..lets just enjoy the party
+  BooABA: 'Option 1: I''ll help to the extent I can.'
+  BooABB: 'Option 2: Sounds like a lot of work..lets just enjoy the party'
   BooReplyAB: 'Well! In simple terms, I''m a wandering ghost going to silly parties
     in hope of finding someone like you to help me. Would you help an old ghost tie
     loose ends? '
-  BooBAA: I'll help to the extent I can.
-  BooBAB: Sounds like a lot of work..lets just enjoy the party
+  BooBAA: 'Option 1: I''ll help to the extent I can.'
+  BooBAB: 'Option 2: Sounds like a lot of work..lets just enjoy the party'
   BooReplyBA: 'Well! A bit about me, I''m a wandering ghost going to silly parties
     in hope of finding someone like you to help me. Would you help an old ghost tie
     loose ends? '
-  BooBBA: Sure, nothing else better to do..
-  BooBBB: No, I'll stay right here.
+  BooBBA: 'Option 1: Sure, nothing else better to do..'
+  BooBBB: 'Option 2: No, I''ll stay right here.'
   BooReplyBB: What a sour attitude... I'm going to get some refreshments, would you
     like to join?
   Atext: {fileID: 286397177}
