@@ -56,8 +56,7 @@ public class GameOver : MonoBehaviour
     public void ReturnHome()
     {
         //return to home scene
-        SceneManager.LoadScene(menuSceneName);
         Time.timeScale = 1f;
-
+        SceneManager.LoadScene(menuSceneName);
     }
 }
