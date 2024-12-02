@@ -6,6 +6,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+/* This code was created through the use of the video: https://www.youtube.com/watch?v=U6-p0SCkmf0 */
 public class Dia : MonoBehaviour
 {
     //public PlayerMovement playm;
@@ -57,17 +59,10 @@ public class Dia : MonoBehaviour
     public Transform Atext;         // need to make sure text is aware of each other
     public Transform Btext;
 
-    public bool end = false; // tracks likeabilty;
+    public bool end = false; // tracks end of decision tree;
 
     public Transform BooResponse; // for Boo's lines
 
-
- /*   public bool Interactwithitem(PlayerSystem other)
-    {
-        canvas.SetActive(true);
-        ActualStart();
-        return true;
-    } */
 
 
 
@@ -84,12 +79,6 @@ public class Dia : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-    }
 
     void OnMouseDown()
     {
