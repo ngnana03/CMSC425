@@ -7,10 +7,6 @@ public class SceneTracker : MonoBehaviour
 {
     public static SceneTracker Instance { get; private set; }
 
-    public int completeCount = 0; // Tracks the number of completed scenes
-    public int totalScenesToComplete = 3; // Number of scenes needed to win
-    private int completedScenes = 0;
-
     public bool isHorrorSceneComplete;
     public bool isAdventureSceneComplete;
     public bool isDatingSceneComplete;
@@ -65,6 +61,8 @@ public class SceneTracker : MonoBehaviour
 
     public void ResetCompletedScenes()
     {
-        completeCount = 0;
+        isHorrorSceneComplete = false;
+        isAdventureSceneComplete = false;
+        isDatingSceneComplete = false;
     }
 }
