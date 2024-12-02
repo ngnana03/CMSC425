@@ -42,6 +42,9 @@ public class Win : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        //set flag, scene was completed
+        SceneTracker.Instance.isAdventureSceneComplete = true;
+
         //pause game
         Time.timeScale = 0f;
     }

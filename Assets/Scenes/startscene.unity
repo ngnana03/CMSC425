@@ -436,6 +436,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195735768}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &260836946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 260836948}
+  - component: {fileID: 260836947}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &260836947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260836946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4865dfafc8443fc81c6b157df72d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completeCount: 0
+  totalScenesToComplete: 3
+  isHorrorSceneComplete: 0
+  isAdventureSceneComplete: 0
+  isDatingSceneComplete: 0
+  popupPanel: {fileID: 0}
+  popupText: {fileID: 0}
+--- !u!4 &260836948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260836946}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.807688, y: 17.249949, z: -22.80502}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &268728581 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bd1d5fc2b239a4154bb1944377fa3b6f, type: 3}
@@ -1891,9 +1942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e198be58c54ec6459e5bba11547bd51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  world_item_1: {fileID: 1429413936}
-  world_item_2: {fileID: 0}
-  world_item_3: {fileID: 0}
   sleeptext_item_1: 'Boo: We are gonna have a romantic dream!'
   sleeptext_item_2: 'Boo: We are going to a nightmare!'
   sleeptext_item_3: 'Boo: We are going going on an adventure!'
@@ -2762,3 +2810,4 @@ SceneRoots:
   - {fileID: 1798561585}
   - {fileID: 1990879218}
   - {fileID: 779227500}
+  - {fileID: 260836948}
