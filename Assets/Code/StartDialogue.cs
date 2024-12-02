@@ -21,8 +21,8 @@ public class StartDialogue : MonoBehaviour, Interactionterminal
     {
         tutorial.SetActive(false);
         box.SetActive(true);
+       // PlayerInput input = new PlayerInput();
         ActualStart();
-       // pmove = other.GetComponent<PlayerMovement>();
 
         return true;
     }
