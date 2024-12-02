@@ -44,7 +44,15 @@ public class PauseMenu : MonoBehaviour
             died = false;
             //set flag,scene was completed scenes 
             SceneTracker.Instance.isHorrorSceneComplete= true;
-            SceneManager.LoadScene("startscene");
+            //congratulate player and return to title screen if player completed all scenes
+            if(SceneTracker.Instance.CheckWinCondition())
+            {
+                SceneManager.LoadScene("Win Scene");
+            }
+            else
+            {
+                SceneManager.LoadScene("startscene");
+            }
             ResumeGame();
         }
         //if the died vaiable is true it will activate the died method
