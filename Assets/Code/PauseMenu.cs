@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//https://youtu.be/9dYDBomQpBQ?si=GprVtBMXHe-vdu2j this was used for this code
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pausemenu;
@@ -40,7 +40,7 @@ public class PauseMenu : MonoBehaviour
         {
             died = false;
             //ResumeGame();
-            SceneManager.LoadScene("Title");
+            SceneManager.LoadScene("startscene");
             ResumeGame();
         }
         if (died)
