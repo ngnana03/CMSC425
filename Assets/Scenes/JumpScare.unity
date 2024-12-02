@@ -7610,7 +7610,6 @@ GameObject:
   - component: {fileID: 1093788146}
   - component: {fileID: 1093788145}
   - component: {fileID: 1093788144}
-  - component: {fileID: 1093788143}
   m_Layer: 0
   m_Name: right foot rotation
   m_TagString: Untagged
@@ -7634,20 +7633,6 @@ Transform:
   - {fileID: 7456642650587525647}
   m_Father: {fileID: 3160623672881888630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1093788143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093788140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e54fa6098b20a4ba10d8786420aabf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotation: {x: 0, y: 0.1, z: 0.2}
-  rotationspeed: 1
 --- !u!135 &1093788144
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9249,7 +9234,6 @@ GameObject:
   - component: {fileID: 1287996793}
   - component: {fileID: 1287996792}
   - component: {fileID: 1287996791}
-  - component: {fileID: 1287996790}
   m_Layer: 0
   m_Name: left foot rotation
   m_TagString: Untagged
@@ -9273,20 +9257,6 @@ Transform:
   - {fileID: 3332882803386818965}
   m_Father: {fileID: 7729476200762697230}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1287996790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287996787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e54fa6098b20a4ba10d8786420aabf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotation: {x: 0, y: 0.1, z: 0.2}
-  rotationspeed: 1
 --- !u!135 &1287996791
 SphereCollider:
   m_ObjectHideFlags: 0
