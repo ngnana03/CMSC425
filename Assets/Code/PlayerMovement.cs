@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
         } */
 
+
         if (!(PauseMenu.isPaused) && !(PauseMenu.died))
         {
             Vector3 forward = transform.TransformDirection(Vector3.forward);

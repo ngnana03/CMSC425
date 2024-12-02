@@ -12,7 +12,7 @@ public class PlayGame : MonoBehaviour
     }
     public void playGame()
     {
-        SceneManager.LoadScene("Dating");
+        SceneManager.LoadScene("startscene");
     }
     public void menu()
     {

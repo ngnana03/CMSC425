@@ -1,6 +1,10 @@
 using UnityEngine;
 
-//This script allows to oscillate either the position or rotation of an object
+/* This script allows to oscillate either the position or rotation of an object
+ * The script will be attached to an empty object that will be the parent of the destructible walls, this makes it so that the modifications
+ * to the transform values of the walls are not realtive to the global cordinate system, but relative to the parent object. I got this idea from the 
+ * Unit 06 video from class
+ */
 public class ModifyTransform : MonoBehaviour
 {
     //Dropdown options that can be assigned in inspector
