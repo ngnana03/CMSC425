@@ -30,26 +30,15 @@ public class SceneTracker : MonoBehaviour
         DontDestroyOnLoad(gameObject); // Persist this object between scenes
     }
 
-    public void CheckWinCondition()
+    public bool CheckWinCondition()
     {
-        if (isHorrorSceneComplete && isAdventureSceneComplete && isDatingSceneComplete)
-        {
-            ShowPopupMessage(); // Show the congratulatory message
-        }
+        //if (isHorrorSceneComplete && isAdventureSceneComplete && isDatingSceneComplete)
+        //{
+        //    ShowPopupMessage(); // Show the congratulatory message
+        //    return 
+        //}
+        return isHorrorSceneComplete && isAdventureSceneComplete && isDatingSceneComplete;
 
-    }
-
-    private void ShowPopupMessage()
-    {
-        if (popupPanel != null)
-        {
-            popupPanel.SetActive(true); // Enable the popup panel
-            popupText.text = "Congratulations! You completed all scenes!"; // Set the message
-        }
-        else
-        {
-            Debug.LogError("PopupPanel is not assigned in the Inspector!");
-        }
     }
 
     public void BackToTitle()

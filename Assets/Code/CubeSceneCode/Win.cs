@@ -8,6 +8,7 @@ public class Win : MonoBehaviour
     public GameObject winCanvas;
     // Name of the scene to return to
     public string menuSceneName = "startscene";
+    public string title = "Win Scene";
 
     // win audio effect, assigned in the inspector
     public AudioClip winSound;
@@ -44,6 +45,11 @@ public class Win : MonoBehaviour
 
         //set flag, scene was completed
         SceneTracker.Instance.isAdventureSceneComplete = true;
+        //congratulate player and return to title screen if player completed all scenes
+        if (SceneTracker.Instance.CheckWinCondition())
+        {
+            ReturnTitle();
+        }
 
         //pause game
         Time.timeScale = 0f;
@@ -61,5 +67,15 @@ public class Win : MonoBehaviour
         //return to home scene
         Time.timeScale = 1f;
         SceneManager.LoadScene(menuSceneName);
+    }
+
+    public void ReturnTitle()
+    {
+        //return to home scene
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(title);
+        //SceneTracker.Instance.isAdventureSceneComplete = false;
+        //SceneTracker.Instance.isHorrorSceneComplete = false;
+        //SceneTracker.Instance.isDatingSceneComplete = false;
     }
 }
