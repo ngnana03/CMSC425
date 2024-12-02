@@ -56,6 +56,7 @@ public class Win : MonoBehaviour
     public void ReturnHome()
     {
         //return to home scene
+        Time.timeScale = 1f;
         SceneManager.LoadScene(menuSceneName);
     }
 }
