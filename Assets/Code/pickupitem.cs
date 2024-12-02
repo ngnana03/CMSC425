@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class pickupitem : MonoBehaviour,Interactionterminal
 {
+    // world number for which world the item belongs to
     public int worldnumber = 1;
+    // references to the other items
     public GameObject item1;
     public GameObject item2;
     public GameObject item3;
-    // Start is called before the first frame update
+    
     public bool Interactwithitem(PlayerSystem other)
     {
+        // references to the other items
         if (worldnumber == 1)
         {
+            // the true and falses for items that you picked up
             if (other.item_1 == false)
             {
                 other.item_1 = true;
@@ -23,9 +27,6 @@ public class pickupitem : MonoBehaviour,Interactionterminal
             }
             other.item_2 = false;
             other.item_3 = false;
-            //item1.SetActive((!(other.item_1)));
-            //item2.SetActive((!(other.item_2)));
-            //item3.SetActive((!(other.item_3)));
         }
         if (worldnumber == 2)
         {
@@ -39,7 +40,6 @@ public class pickupitem : MonoBehaviour,Interactionterminal
             }
             other.item_1 = false;
             other.item_3 = false;
-            //item2.SetActive((!(other.item_2)));
         }
         if (worldnumber == 3)
         {
@@ -53,13 +53,14 @@ public class pickupitem : MonoBehaviour,Interactionterminal
             }
             other.item_1 = false;
             other.item_2 = false;
-            //item3.SetActive((!(other.item_3)));
         }
+        // dissapear the item if it is picked up 
         item1.SetActive((!(other.item_1)));
         item2.SetActive((!(other.item_2)));
         item3.SetActive((!(other.item_3)));
+        // dissapear the item if it is picked up 
         other.ItemDetect = false;
-        //yield return new WaitForSeconds(4);
+
         return true;
     }
 }

@@ -18,15 +18,16 @@ public class PlayerSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // it checks if an item is detected, if F is pressed, and if the item in view has an interactionterminal
         if (ItemDetect && Input.GetKeyDown(KeyCode.F)&&(col.GetComponent<Interactionterminal>() != null))
         {
+            // interact with the interaction terminal
             var interactionterminal = col.GetComponent<Interactionterminal>();
             interactionterminal.Interactwithitem(this);
         }
 
 
-
+        // when going to sleep, the screen becomes black 
         if (sleep == true & transparancy < 255)
         {
             transparancy = transparancy + Time.deltaTime * 100;
@@ -36,7 +37,7 @@ public class PlayerSystem : MonoBehaviour
             transparancy = 255;
         }
 
-
+        // when waking up, the screen becomes white 
         if (sleep == false & transparancy > 0)
         {
             transparancy = transparancy - Time.deltaTime * 100;
@@ -44,14 +45,13 @@ public class PlayerSystem : MonoBehaviour
         if (transparancy <= 0)
         {
             transparancy = 0;
-            //textsleepscreen.SetActive(false);
         }
-
+        //changing the sleeep screen. 
         imagetransparancy.GetComponent<Image>().color = new Color32(0, 0, 0, (byte) ((int)(transparancy % 256)));
 
     }
 
-    // Change it to player collider instead of boo collider
+    // mark as an item being detected and chance col to that item. 
     private void OnTriggerEnter(Collider other)
     {
 
