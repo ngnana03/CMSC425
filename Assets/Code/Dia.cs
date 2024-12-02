@@ -138,7 +138,7 @@ public class Dia : MonoBehaviour
             Atext.GetComponent<TextMeshPro>().text = "";
             Btext.GetComponent<TextMeshPro>().text = "";
             BooResponse.GetComponent<TextMeshPro>().text = "You and Boo travel the after life together as companions..";
-            StartCoroutine(endCut("Title"));
+            StartCoroutine(endCut("startscene"));
                 }
 
                 if (currPos == "BooBBA" || currPos == "BooABB" || currPos == "BooBAB")    // Neutral Negative
@@ -146,7 +146,7 @@ public class Dia : MonoBehaviour
             Atext.GetComponent<TextMeshPro>().text = "";
             Btext.GetComponent<TextMeshPro>().text = "";
             BooResponse.GetComponent<TextMeshPro>().text = "You and Boo go around the party and mingle. Boo seems to be incredibly disheartened and distant most of the time.";
-            endCut("Title");
+            StartCoroutine(endCut("startscene"));
 
         }
 
@@ -157,7 +157,7 @@ public class Dia : MonoBehaviour
 
             BooResponse.GetComponent<TextMeshPro>().text = "You and Boo go around the party and make normal conversation, becoming ok friends.";
          //   Debug.Log("AAAAA");
-            endCut("Title");
+            StartCoroutine(endCut("startscene"));
         }
 
                 if (currPos == "BooBBB")        // Bad Ending
@@ -165,7 +165,7 @@ public class Dia : MonoBehaviour
             Atext.GetComponent<TextMeshPro>().text = "";
             Btext.GetComponent<TextMeshPro>().text = "";
             BooResponse.GetComponent<TextMeshPro>().text = "Boo goes to get refreshments but never comes back. You are left stranded at the party.";
-            endCut("Title");
+            StartCoroutine(endCut("startscene"));
         }
 
                 
