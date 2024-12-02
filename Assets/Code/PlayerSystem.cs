@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerSystem : MonoBehaviour
 {
-    bool ItemDetect = false;
+    public bool ItemDetect = false;
     private readonly Collider[] _colliders = new Collider[3];
     Collider col;
     float transparancy = 255;
@@ -58,13 +58,12 @@ public class PlayerSystem : MonoBehaviour
         ItemDetect = true;
         
         col = other;
-
     }
 
     private void OnTriggerExit(Collider other)
     {
         ItemDetect = false;
-
+        col = null;
     }
 }
 

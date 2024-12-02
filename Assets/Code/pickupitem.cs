@@ -58,6 +58,7 @@ public class pickupitem : MonoBehaviour,Interactionterminal
         item1.SetActive((!(other.item_1)));
         item2.SetActive((!(other.item_2)));
         item3.SetActive((!(other.item_3)));
+        other.ItemDetect = false;
         //yield return new WaitForSeconds(4);
         return true;
     }

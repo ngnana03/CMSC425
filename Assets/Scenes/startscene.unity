@@ -370,8 +370,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 17.676767, y: 15.300492, z: 50.82238}
-  m_Center: {x: 2.8929708, y: 7.650246, z: 25.41119}
+  m_Size: {x: 20.990648, y: 15.300417, z: 23.646305}
+  m_Center: {x: 4.549916, y: 7.6502085, z: 11.823153}
 --- !u!1 &374903928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,6 +1820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6f9f58b15a9984db8f1364ca5cf137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemDetect: 0
   sleep: 0
   imagetransparancy: {fileID: 1129132443}
   textsleepscreen: {fileID: 1129132441}
