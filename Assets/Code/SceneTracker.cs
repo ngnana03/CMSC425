@@ -16,7 +16,7 @@ public class SceneTracker : MonoBehaviour
     public bool isDatingSceneComplete;
 
     public GameObject popupPanel; // Assign in the Inspector
-    public TextMeshProUGUI popupText; // Assign in the Inspector
+    public TextMeshProUGUI popupText; // Assign in the Inspector.
 
     private void Awake()
     {
