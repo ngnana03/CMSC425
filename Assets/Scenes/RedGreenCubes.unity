@@ -89773,7 +89773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleCountText: {fileID: 1805998127}
-  winCount: 15
+  winCount: 1
   winScreen: {fileID: 406545679}
   menuSceneName: House
 --- !u!1 &1806141087 stripped
